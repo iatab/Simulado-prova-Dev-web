@@ -31,7 +31,8 @@ public class PedidoService {
         ped.setDescricao(pedido.getDescricao());
         ped.setProdutos(pedido.getProdutos());
         ped.setProdutos(pedido.getProdutos());
-        return pedidoRepository.save(ped);
+        pedidoRepository.save(ped);
+        return ped;
     }
     //Alterar pedido: Crie um endpoint que permita aos clientes alterar um determinado pedido.
     public Pedido atualizarPedido(Pedido pedido) throws Exception {
