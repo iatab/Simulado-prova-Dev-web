@@ -14,7 +14,7 @@ public class Pedido {
     private String nome;
     private String descricao;
     private Double valorTotal;
-    @OneToMany
+    @ManyToMany
     private  List<Produto> produtos;
 
     public Long getId() {

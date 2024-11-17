@@ -48,9 +48,10 @@ public class PedidoService {
     //Alterar produtos patch de um pedido: Crie um endpoint que permita aos clientes alterar os produtos de um determinado pedido.
     public AlterarPedidoDTO alterarProdutodoPedidoPorId(Long id, AlterarPedidoDTO pedidoDTO) throws Exception {
         Optional<Pedido> ped = pedidoRepository.findById(id);
-        if (Optional.ofNullable(ped).isPresent()) {
+        if (ped.isPresent()) {
             ped.get().setProdutos(pedidoDTO.getProdutos());
             pedidoRepository.save(ped.get());
+            return pedidoDTO;
 
         }
         throw new Exception("Pedido nao econtrado");
