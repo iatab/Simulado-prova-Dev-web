@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/pedido")
+@RequestMapping("/pedidos")
 public class PedidoController {
     private PedidoService pedidoService;
     public PedidoController(PedidoService pedidoService) {
@@ -54,7 +54,7 @@ public class PedidoController {
         }
      }
 
-     @PatchMapping("/alterarpedido/{codigo}")
+     @PatchMapping("/alterarprodutos/{codigo}")
     public ResponseEntity<?> alterarProdutoPedido(@PathVariable Long codigo, @RequestBody AlterarPedidoDTO pedidoDTO){
         try{
             AlterarPedidoDTO p = pedidoService.alterarProdutodoPedidoPorId(codigo, pedidoDTO);
